@@ -1,23 +1,32 @@
-import logo from './logo.svg';
-import './App.css';
+// src/App.js
+import React from 'react';
+import Splitter, { SplitDirection } from '@devbookhq/splitter';
+import ComponentA from './ComponentA';
+import ComponentB from './ComponentB';
+import ComponentC from './ComponentC';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="App" style={{ height: '100vh' }}>
+      <Splitter
+        direction={SplitDirection.Vertical}
+        initialSizes={[50, 50]}  
+        minSize={100}
+        style={{ height: '100%' }}
+      >
+        <div style={{ height: '100%' }}>
+          <Splitter
+            direction={SplitDirection.Horizontal}
+            initialSizes={[50, 50]}  
+            minSize={100}
+            style={{ height: '100%' }}
+          >
+            <ComponentA />
+            <ComponentB />
+          </Splitter>
+        </div>
+        <ComponentC />
+      </Splitter>
     </div>
   );
 }
