@@ -62,7 +62,7 @@ const ComponentA = () => {
                 <input
                     value={currentData}
                     onChange={(e) => setCurrentData(e.target.value)}
-                    placeholder="Current ontent"
+                    placeholder="Current Content"
                     style={{ width: '49%', padding: '10px', marginRight: '2%' }}
                 />
                 <input
