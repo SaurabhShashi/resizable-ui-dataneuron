@@ -8,7 +8,7 @@ const ComponentC = () => {
 
     const handleAdd = async () => {
         try {
-            const response = await fetch('http://localhost:4000/data/add/C', {
+            const response = await fetch('https://resizable-layout-api-dataneuron-1.onrender.com/data/add/C', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ content: inputData })
@@ -23,7 +23,7 @@ const ComponentC = () => {
 
     const handleUpdate = async () => {
         try {
-            const response = await fetch('http://localhost:4000/data/update/C', {
+            const response = await fetch('https://resizable-layout-api-dataneuron-1.onrender.com/data/update/C', {
                 method: 'PUT',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ currentContent: currentData, updatedContent: updatedData })
@@ -39,7 +39,7 @@ const ComponentC = () => {
 
     const fetchCounts = async () => {
         try {
-            const response = await fetch('http://localhost:4000/data/count');
+            const response = await fetch('https://resizable-layout-api-dataneuron-1.onrender.com/data/count');
             const data = await response.json();
             const countData = data.find(item => item.type === 'A')?.operationCount || { adds: 0, updates: 0 };
             setOperationCounts(countData);
